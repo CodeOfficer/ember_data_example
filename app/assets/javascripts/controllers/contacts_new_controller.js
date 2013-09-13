@@ -1,4 +1,20 @@
 App.ContactsNewController = Em.ObjectController.extend({
+
+  actions: {
+    addPhoneNumber: function() {
+      this.get('model.phoneNumbers').createRecord();
+    },
+
+    removePhoneNumber: function(phoneNumber) {
+      phoneNumber.deleteRecord();
+    },
+
+    cancel: function() {
+      this.stopEditing();
+      this.transitionToRoute('contacts.index');
+    }
+  },
+
   startEditing: function() {
     // create a new record on a local transaction
     this.transaction = this.get('store').transaction();
@@ -25,18 +41,4 @@ App.ContactsNewController = Em.ObjectController.extend({
     if (this.get('model.id')) {
       this.transitionToRoute('contact', this.get('model'));
     }
-  }.observes('model.id'),
-
-  cancel: function() {
-    this.stopEditing();
-    this.transitionToRoute('contacts.index');
-  },
-
-  addPhoneNumber: function() {
-    this.get('model.phoneNumbers').createRecord();
-  },
-
-  removePhoneNumber: function(phoneNumber) {
-    phoneNumber.deleteRecord();
-  }
 });
