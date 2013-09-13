@@ -1,5 +1,4 @@
 //= require_self
-//= require ./store
 //= require_tree ./adapters
 //= require_tree ./serializers
 //= require_tree ./models
