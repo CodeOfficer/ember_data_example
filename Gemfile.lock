@@ -68,10 +68,10 @@ GEM
     childprocess (0.3.9)
       ffi (~> 1.0, >= 1.0.11)
     colorize (0.5.8)
-    ember-data-source (0.13)
+    ember-data-source (1.0.0.beta.2)
       ember-source
-    ember-source (1.0.0.rc6)
-      handlebars-source (= 1.0.0.rc4)
+    ember-source (1.0.0)
+      handlebars-source (= 1.0.12)
     erubis (2.7.0)
     eventmachine (1.0.1)
     execjs (1.4.0)
@@ -79,7 +79,7 @@ GEM
     faye-websocket (0.4.7)
       eventmachine (>= 0.12.0)
     ffi (1.4.0)
-    handlebars-source (1.0.0.rc4)
+    handlebars-source (1.0.12)
     hike (1.2.3)
     http_parser.rb (0.5.3)
     i18n (0.6.4)
@@ -193,9 +193,10 @@ DEPENDENCIES
   active_model_serializers!
   anjlab-bootstrap-rails (>= 2.1)
   capybara
+  ember-data-source (= 1.0.0.beta.2)
   ember-rails!
-  ember-source (= 1.0.0.rc6)
-  handlebars-source (= 1.0.0.rc4)
+  ember-source (= 1.0.0)
+  handlebars-source (= 1.0.12)
   jquery-rails
   konacha
   minitest

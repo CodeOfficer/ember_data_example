@@ -16,8 +16,9 @@ end
 gem 'active_model_serializers', github: 'rails-api/active_model_serializers'
 gem 'jquery-rails'
 gem 'ember-rails', github: 'emberjs/ember-rails'
-gem 'ember-source', '1.0.0.rc6'
-gem 'handlebars-source', '1.0.0.rc4'
+gem 'ember-source', '1.0.0'
+gem 'ember-data-source', '1.0.0.beta.2'
+gem 'handlebars-source', '1.0.12'
 
 group :test, :development do
   gem 'minitest'
