@@ -29,6 +29,7 @@ App.ContactsNewController = Em.ObjectController.extend({
   },
 
   stopEditing: function() {
+    this.get('model.phoneNumbers').invoke('rollback');
     this.get('model').rollback();
   }
 });
