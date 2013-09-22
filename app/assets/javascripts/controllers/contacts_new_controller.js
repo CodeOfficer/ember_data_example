@@ -12,6 +12,13 @@ App.ContactsNewController = Em.ObjectController.extend({
     cancel: function() {
       this.stopEditing();
       this.transitionToRoute('contacts.index');
+    },
+
+    save: function() {
+      // commit and then clear the local transaction
+      // this.transaction.commit();
+      // this.transaction = null;
+      this.get('model').save();
     }
   },
 
@@ -27,12 +34,6 @@ App.ContactsNewController = Em.ObjectController.extend({
       this.transaction.rollback();
       this.transaction = null;
     }
-  },
-
-  save: function() {
-    // commit and then clear the local transaction
-    this.transaction.commit();
-    this.transaction = null;
   },
 
   transitionAfterSave: function() {
