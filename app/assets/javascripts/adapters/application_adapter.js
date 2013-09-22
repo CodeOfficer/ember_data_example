@@ -1,1 +1,1 @@
-App.ApplicationAdapter = DS.RESTAdapter.extend({});
+App.ApplicationAdapter = DS.ActiveModelAdapter.extend({});
