@@ -15,10 +15,12 @@ App.ContactsNewController = Em.ObjectController.extend({
     },
 
     save: function() {
-      // commit and then clear the local transaction
-      // this.transaction.commit();
-      // this.transaction = null;
-      this.get('model').save();
+      var self = this;
+      var model = this.get('model');
+
+      model.save().then(function() {
+        self.transitionToRoute('contact', model);
+      });
     }
   },
 
