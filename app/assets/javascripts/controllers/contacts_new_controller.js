@@ -25,9 +25,7 @@ App.ContactsNewController = Em.ObjectController.extend({
   },
 
   startEditing: function() {
-    // create a new record on a local transaction
-    this.transaction = this.get('store').transaction();
-    this.set('model', this.transaction.createRecord(App.Contact, {}));
+    this.set('model', this.store.createRecord('contact', {}));
   },
 
   stopEditing: function() {
