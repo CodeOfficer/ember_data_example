@@ -1,6 +1,26 @@
 App.ContactEditController = Em.ObjectController.extend({
   needs: ['contact'],
 
+  actions: {
+    save: function() {
+      this.transaction.commit();
+      this.transaction = undefined;
+      this.get('controllers.contact').stopEditing();
+    },
+
+    cancel: function() {
+      this.get('controllers.contact').stopEditing();
+    },
+
+    addPhoneNumber: function() {
+      this.get('model.phoneNumbers').createRecord();
+    },
+
+    removePhoneNumber: function(phoneNumber) {
+      phoneNumber.deleteRecord();
+    }
+  },
+
   startEditing: function() {
     // add the contact and its associated phone numbers to a local transaction
     var contact = this.get('model');
@@ -19,23 +39,5 @@ App.ContactEditController = Em.ObjectController.extend({
       transaction.rollback();
       this.transaction = undefined;
     }
-  },
-
-  save: function() {
-    this.transaction.commit();
-    this.transaction = undefined;
-    this.get('controllers.contact').stopEditing();
-  },
-
-  cancel: function() {
-    this.get('controllers.contact').stopEditing();
-  },
-
-  addPhoneNumber: function() {
-    this.get('model.phoneNumbers').createRecord();
-  },
-
-  removePhoneNumber: function(phoneNumber) {
-    phoneNumber.deleteRecord();
   }
 });
