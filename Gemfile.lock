@@ -193,7 +193,6 @@ DEPENDENCIES
   active_model_serializers!
   anjlab-bootstrap-rails (>= 2.1)
   capybara
-  ember-data-source (= 1.0.0.beta.2)
   ember-rails!
   ember-source (= 1.0.0)
   handlebars-source (= 1.0.12)
